@@ -2,7 +2,9 @@
 
 #MONGO DB PASSWORD note stored on google key, create a .env file with MONGO = string...
 
-/.env.env
+/.env
+
+.env
 # dependencies
 /node_modules
 /.pnp
