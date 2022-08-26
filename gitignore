@@ -1,9 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-#MONGO DB PASSWORD note stored on google key, create a .env file with MONGO = string...
+# MONGO DB PASSWORD note stored on google key, create a .env file with MONGO = string...
 
 /.env
-
 .env
 # dependencies
 /node_modules
