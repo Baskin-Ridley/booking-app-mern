@@ -21,7 +21,6 @@ mongoose.connection.on("connected", ()=>{
     console.log("mongoDB connected")
 })
 
-
 app.listen(8800, () => {
     connect()
     console.log("connected")
