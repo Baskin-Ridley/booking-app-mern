@@ -33,6 +33,45 @@ router.put("/:id", async (req, res) => {
         //500 is server error
     }
 })
+//delete
+router.delete("/:id", async (req, res) => {
+    try{
+        await Hotel.findByIdAndDelete(
+            req.params.id
+
+        );
+        res.status(200).json("deleted hotel");
+        //200 is request has succeeded
+    } catch (err) {
+        res.status(500).json(err);
+        //500 is server error
+    }
+})
+//get
+router.get("/:id", async (req, res) => {
+    try{
+        const hotel = await Hotel.findById(
+            req.params.id
+        );
+        res.status(200).json(hotel);
+        //200 is request has succeeded
+    } catch (err) {
+        res.status(500).json(err);
+        //500 is server error
+    }
+})
+
+//get all
+router.get("/", async (req, res) => {
+    try{
+        const hotels = await Hotel.find()
+        res.status(200).json(hotels);
+        //200 is request has succeeded
+    } catch (err) {
+        res.status(500).json(err);
+        //500 is server error
+    }
+})
 
 
 export default router
