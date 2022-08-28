@@ -37,7 +37,16 @@ app.use("/api/rooms", roomsRoute);
 //error handling middleware
 
 app.use((err,req,res,next)=>{
-    return res.status(500).json("error from middleware")
+    const errorStatus = err.status || 500;
+    const errorMessage = err.status || "Something went Wrong!";
+    return res.status(500).json(
+        {
+            success: false,
+            status: errorStatus,
+            message: errorMessage,
+            stack: err.stack,
+        }
+    )
 })
 
 app.listen(8800, () => {
