@@ -4,7 +4,7 @@ import Hotel from "../models/Hotel.js";
 const router = express.Router();
 
 //create
-router.post("/", async (req,res) => {
+router.post("/", async (req,res,next) => {
 
     const newHotel = new Hotel(req.body)
 
@@ -19,7 +19,7 @@ router.post("/", async (req,res) => {
 })
 
 //update
-router.put("/:id", async (req, res) => {
+router.put("/:id", async (req, res,next) => {
     try{
         const updatedHotel = await Hotel.findByIdAndUpdate(
             req.params.id,
@@ -34,7 +34,7 @@ router.put("/:id", async (req, res) => {
     }
 })
 //delete
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req, res,next) => {
     try{
         await Hotel.findByIdAndDelete(
             req.params.id
@@ -48,7 +48,7 @@ router.delete("/:id", async (req, res) => {
     }
 })
 //get
-router.get("/:id", async (req, res) => {
+router.get("/:id", async (req, res,next) => {
     try{
         const hotel = await Hotel.findById(
             req.params.id
@@ -62,7 +62,7 @@ router.get("/:id", async (req, res) => {
 })
 
 //get all
-router.get("/", async (req, res) => {
+router.get("/", async (req, res,next) => {
 
     const failed = true
     const err = new Error()
