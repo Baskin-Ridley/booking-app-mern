@@ -1,22 +1,12 @@
 import express from "express";
 import Hotel from "../models/Hotel.js";
+import { createHotel } from "../controllers/hotelController.js"
+
 
 const router = express.Router();
 
 //create
-router.post("/", async (req,res,next) => {
-
-    const newHotel = new Hotel(req.body)
-
-    try{
-        const savedHotel = await newHotel.save();
-        res.status(200).json(savedHotel);
-        //200 is request has succeeded
-    } catch (err) {
-        next(err)
-        //500 is server error
-    }
-})
+router.post("/", createHotel)
 
 //update
 router.put("/:id", async (req, res,next) => {
