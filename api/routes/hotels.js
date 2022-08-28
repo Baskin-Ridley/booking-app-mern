@@ -13,7 +13,7 @@ router.post("/", async (req,res) => {
         res.status(200).json(savedHotel);
         //200 is request has succeeded
     } catch (err) {
-        res.status(500).json(err);
+        next(err)
         //500 is server error
     }
 })
@@ -29,7 +29,7 @@ router.put("/:id", async (req, res) => {
         res.status(200).json(updatedHotel);
         //200 is request has succeeded
     } catch (err) {
-        res.status(500).json(err);
+        next(err)
         //500 is server error
     }
 })
@@ -43,7 +43,7 @@ router.delete("/:id", async (req, res) => {
         res.status(200).json("deleted hotel");
         //200 is request has succeeded
     } catch (err) {
-        res.status(500).json(err);
+        next(err)
         //500 is server error
     }
 })
@@ -56,7 +56,7 @@ router.get("/:id", async (req, res) => {
         res.status(200).json(hotel);
         //200 is request has succeeded
     } catch (err) {
-        res.status(500).json(err);
+        next(err)
         //500 is server error
     }
 })
@@ -68,7 +68,7 @@ router.get("/", async (req, res) => {
         res.status(200).json(hotels);
         //200 is request has succeeded
     } catch (err) {
-        res.status(500).json(err);
+        next(err)
         //500 is server error
     }
 })

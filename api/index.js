@@ -34,6 +34,12 @@ app.use("/api/users", usersRoute);
 app.use("/api/hotels", hotelsRoute);
 app.use("/api/rooms", roomsRoute);
 
+//error handling middleware
+
+app.use((err,req,res,next)=>{
+    return res.status(500).json("error from middleware")
+})
+
 app.listen(8800, () => {
     connect()
     console.log("connected")
