@@ -38,7 +38,7 @@ app.use("/api/rooms", roomsRoute);
 
 //error handling middleware
 
-app.use((err,req,res,next)=>{
+app.use((err, req, res, next)=>{
     const errorStatus = err.status || 500;
     const errorMessage = err.status || "Something went Wrong!";
     return res.status(500).json(

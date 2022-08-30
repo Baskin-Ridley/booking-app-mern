@@ -1,9 +1,9 @@
 import Hotel from "../models/Hotel.js";
 
-export const createHotel = async (req,res,next)=>{
+export const createHotel = async (req, res, next)=>{
     const newHotel = new Hotel(req.body)
 
-    try{
+    try {
         const savedHotel = await newHotel.save();
         res.status(200).json(savedHotel);
         //200 is request has succeeded
