@@ -5,7 +5,7 @@ import { createRoom, getAllRooms, updateRoom, deleteRoom, getRoom } from "../con
 import { verifyAdmin } from "../utils/verifyToken.js"
 
 //create
-router.post("/", verifyAdmin, createRoom)
+router.post("/:hotelId", verifyAdmin, createRoom)
 
 //update
 router.put("/:id", verifyAdmin, updateRoom)
