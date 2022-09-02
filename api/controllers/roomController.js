@@ -52,7 +52,7 @@ export const createRoom = async (req, res, next) => {
     }
   };
   export const deleteRoom = async (req, res, next) => {
-    const hotelId = req.params.hotelid;
+    const hotelId = req.params.hotelId;
     try {
       await Room.findByIdAndDelete(req.params.id);
       try {
