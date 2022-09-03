@@ -1,8 +1,8 @@
 
 import React from 'react';
-import logo from './logo.svg';
+
 import './sass/style.css';
-import {BrowserRouter, Router, Route, Routes} from "react-router-dom"
+import {BrowserRouter, Route, Routes} from "react-router-dom"
 
 import Home from './pages/home/Home';
 import List from './pages/list/List';
