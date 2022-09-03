@@ -9,7 +9,7 @@ import List from './pages/list/List';
 import Hotel from './pages/hotel/Hotel';
 function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/hotels" element={<List />} />
