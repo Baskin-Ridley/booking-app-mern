@@ -71,3 +71,18 @@ export const getAllHotels = async (req,res,next)=>{
     }
     
 }
+
+export const getByCity = async (req,res,next)=>{
+    const cities = req.query.cities.split(",")
+    try{
+        const list = await Promise.all(cities.map(city=>{
+            return Hotel.countDocuments({city:city})
+        }))
+        res.status(200).json(list);
+        //200 is request has succeeded
+    } catch (err) {
+        next(err)
+        //500 is server error
+    }
+    
+}
