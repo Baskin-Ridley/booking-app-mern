@@ -56,5 +56,5 @@
   "devDependencies": {
     "@types/react-date-range": "^1.4.4",
     "gh-pages": "^4.0.0"
-  }, "proxy":"https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/"
+  }
 }
