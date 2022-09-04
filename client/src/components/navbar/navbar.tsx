@@ -6,7 +6,7 @@ const navbar = () => {
   return (
     <div className="navbar">
         <div className="navContainer">
-            <Link to = "/">
+            <Link to = "/" style={{color:"inherit", textDecoration:"none"}}>
               <span className="logo">Logo</span>
             </Link>
               <div className="navItems">
