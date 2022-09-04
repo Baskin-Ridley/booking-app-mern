@@ -1,58 +1,36 @@
+// @ts-nocheck
 import React from 'react'
 import "./featuredProperties.css"
+import useFetch from '../../hooks/useFetch'
 const FeaturedProperties = () => {
-  return (
-    <div className="fp">
-        <div className="fpListItem">
-        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" 
-            alt="placeholder"
-            className="fpListImg"/>
-            <span className="fpName">King's Cross Hotel</span>
-            <span className="fpCity">London</span>
-            <span className="fpPrice">£</span>
-            <div className="fpRating">
-                <button>7.6</button>
-                <span>Excellent</span>
-            </div>
-        </div>        
-        <div className="fpListItem">
-        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" 
-            alt="placeholder"
-            className="fpListImg"/>
-            <span className="fpName">King's Cross Hotel</span>
-            <span className="fpCity">London</span>
-            <span className="fpPrice">£</span>
-            <div className="fpRating">
-                <button>7.6</button>
-                <span>Excellent</span>
-            </div>
-        </div>
-        <div className="fpListItem">
-        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" 
-            alt="placeholder"
-            className="fpListImg"/>
-            <span className="fpName">King's Cross Hotel</span>
-            <span className="fpCity">London</span>
-            <span className="fpPrice">£</span>
-            <div className="fpRating">
-                <button>7.6</button>
-                <span>Excellent</span>
-            </div>
-        </div>
-        <div className="fpListItem">
-        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" 
-            alt="placeholder"
-            className="fpListImg"/>
-            <span className="fpName">King's Cross Hotel</span>
-            <span className="fpCity">London</span>
-            <span className="fpPrice">£</span>
-            <div className="fpRating">
-                <button>7.6</button>
-                <span>Excellent</span>
-            </div>
-        </div>
-    </div>
-  )
-}
+    const { data, loading, error } = useFetch("https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels?featured=true&limit=4");
+  
+    return (
+      <div className="fp">
+        {loading ? (
+          "Loading"
+        ) : (
+          <>
+            {data.map((item) => (
+              <div className="fpItem" key={item._id}>
+                <img
+                  src={item.photos[0]}
+                  alt=""
+                  className="fpImg"
+                />
+                <span className="fpName">{item.name}</span>
+                <span className="fpCity">{item.city}</span>
+                <span className="fpPrice">Starting from ${item.cheapestPrice}</span>
+                {item.rating && <div className="fpRating">
+                  <button>{item.rating}</button>
+                  <span>Excellent</span>
+                </div>}
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+    );
+  };
 
 export default FeaturedProperties
