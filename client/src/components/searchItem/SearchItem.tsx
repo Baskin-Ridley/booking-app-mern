@@ -31,7 +31,7 @@ const SearchItem = ({item}: any) => {
         <div className="siDetailTexts">
           <span className="siPrice">£{item.cheapestPrice}</span>
           <span className="siTaxOp">Includes taxes and fees</span>
-          <Link to={`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels/$item._id}`}>
+          <Link to={`${item._id}`}>
             <button className="siCheckButton">See availability</button>
           </Link>
         </div>
