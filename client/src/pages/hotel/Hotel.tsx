@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 import "./hotel.css";
 import Navbar from "../../components/navbar/navbar";
 import Header from "../../components/header/Header";
@@ -22,7 +22,7 @@ const Hotel = () => {
   console.log(location)
   const id = location.pathname.split("/")[2];
   console.log(id)
-  const { data, loading, error } = useFetch(`/hotels/${id}`)
+  const { data, loading, error } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels/find/${id}`)
 
   const photos = [
     {
