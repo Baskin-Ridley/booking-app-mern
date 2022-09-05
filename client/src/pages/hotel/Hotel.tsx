@@ -16,6 +16,7 @@ import useFetch from "../../hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { useContext } from "react";
+
 const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
