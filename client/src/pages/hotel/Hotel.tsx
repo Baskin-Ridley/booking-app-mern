@@ -14,7 +14,8 @@ import {
 import { SetStateAction, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useLocation } from "react-router-dom";
-
+import { SearchContext } from "../../context/SearchContext";
+import { useContext } from "react";
 const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
@@ -23,7 +24,8 @@ const Hotel = () => {
   const id = location.pathname.split("/")[2];
   console.log(id)
   const { data, loading, error } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels/find/${id}`)
-
+  const { date } = useContext(SearchContext)
+  console.log(date)
   const photos = [
     {
       src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
