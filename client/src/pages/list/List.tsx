@@ -17,7 +17,9 @@ const List = () => {
   const [date, setDate] = useState(location.state.date)
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options)
-  
+  const [min, setMin] = useState(1)
+  const [max, setMax] = useState(999)
+
   const { data, loading, error, refetch } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels?city=${destination}`)
 
 
@@ -54,14 +56,14 @@ const List = () => {
                   >
                     Min price <small>per night</small>
                   </span>
-                  <input type="number" className="lsOptionInput" />
+                  <input type="number" onChange={e=>setMin(e.target.value)} className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText"
                   >
                     Max price <small>per night</small>
                   </span>
-                  <input type="number" className="lsOptionInput" />
+                  <input type="number" onChange={e=>setMax(e.target.value)} className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText"
