@@ -17,11 +17,14 @@ const List = () => {
   const [date, setDate] = useState(location.state.date)
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options)
-  const [min, setMin] = useState(1)
+  const [min, setMin] = useState(0)
   const [max, setMax] = useState(999)
 
-  const { data, loading, error, refetch } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels?city=${destination}`)
+  const { data, loading, error, reFetch } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels?city=${destination}&min=${min}&max=${max}`)
 
+  const handleClick = () =>{
+    reFetch()
+  }
 
   return (
     <div>
@@ -88,7 +91,7 @@ const List = () => {
                 </div>
                 </div>
             </div>
-            <button>Search</button>
+            <button onClick={handleClick}>Search</button>
           </div>
           <div className="listResult">
             {loading ? "loading" : <>
