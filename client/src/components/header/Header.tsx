@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Header = ({type}) => {
 
-    const [destination, setDestination] = useState("");
+    const [destination, setDestination] = useState("london");
 
     const [openDate, setOpenDate] = useState(false);
 
@@ -82,7 +82,7 @@ const Header = ({type}) => {
                     <input type="text" 
                     placeholder="Search stays" 
                     className="headerSearchInput"
-                    onChange={e=>setDestination(e.target.value)}
+                    onChange={e=>setDestination(e.target.value.toLowerCase())}
                     />
                 </div>
                 <div className="headerSearchItem">
