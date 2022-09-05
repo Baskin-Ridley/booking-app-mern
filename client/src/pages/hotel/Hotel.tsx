@@ -1,3 +1,4 @@
+
 import "./hotel.css";
 import Navbar from "../../components/navbar/navbar";
 import Header from "../../components/header/Header";
@@ -11,10 +12,17 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { SetStateAction, useState } from "react";
+import useFetch from "../../hooks/useFetch";
+import { useLocation } from "react-router-dom";
 
 const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+  const location = useLocation()
+  console.log(location)
+  const id = location.pathname.split("/")[2];
+  console.log(id)
+  const { data, loading, error } = useFetch(`/hotels/${id}`)
 
   const photos = [
     {
