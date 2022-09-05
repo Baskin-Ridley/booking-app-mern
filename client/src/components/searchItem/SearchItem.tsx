@@ -1,6 +1,6 @@
 import "./searchItem.css";
-
-const SearchItem = ({item}) => {
+import { Link } from "react-router-dom";
+const SearchItem = ({item}: any) => {
   return (
     <div className="searchItem">
       <img
@@ -9,9 +9,9 @@ const SearchItem = ({item}) => {
         className="siImg"
       />
       <div className="siDesc">
-        <h1 className="siTitle">Tower Street Apartments</h1>
-        <span className="siDistance">500m from center</span>
-        <span className="siTaxiOp">Free airport taxi</span>
+        <h1 className="siTitle">{item.name}</h1>
+        <span className="siDistance">{item.distance}</span>
+        <span className="siTaxiOp">{item.desc}</span>
         <span className="siSubtitle">
           Studio Apartment with Air conditioning
         </span>
@@ -24,14 +24,16 @@ const SearchItem = ({item}) => {
         </span>
       </div>
       <div className="siDetails">
-        <div className="siRating">
+        {item.rating && <div className="siRating">
           <span>Excellent</span>
-          <button>9.4</button>
-        </div>
+          <button>{item.rating}</button>
+        </div>}
         <div className="siDetailTexts">
-          <span className="siPrice">£223</span>
+          <span className="siPrice">£{item.cheapestPrice}</span>
           <span className="siTaxOp">Includes taxes and fees</span>
-          <button className="siCheckButton">See availability</button>
+          <Link to={`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels/$item._id}`}>
+            <button className="siCheckButton">See availability</button>
+          </Link>
         </div>
       </div>
     </div>

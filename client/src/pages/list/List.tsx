@@ -18,7 +18,8 @@ const List = () => {
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options)
   
-  const { data, loading, error, refetch } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotel?city=${destination}`)
+  const { data, loading, error, refetch } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels?city=${destination}`)
+
 
   return (
     <div>
@@ -90,6 +91,7 @@ const List = () => {
           <div className="listResult">
             {loading ? "loading" : <>
             {data.map(item=>(
+
               <SearchItem item={item} key={item._id}/>
             ))}
             </>}
