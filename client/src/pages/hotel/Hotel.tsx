@@ -66,7 +66,10 @@ const Hotel = () => {
     <div>
       <Navbar />
       <Header type="list" />
-      <div className="hotelContainer">
+      {loading ? (
+        "loading"
+      ) : (
+        <div className="hotelContainer">
         {open && (
           <div className="slider">
             <FontAwesomeIcon
@@ -91,23 +94,23 @@ const Hotel = () => {
         )}
         <div className="hotelWrapper">
           <button className="bookNow">Reserve or Book Now!</button>
-          <h1 className="hotelTitle">King's Cross Hotel</h1>
+          <h1 className="hotelTitle">{data.name}</h1>
           <div className="hotelAddress">
             <FontAwesomeIcon icon={faLocationDot} />
-            <span>Kings Cross Station</span>
+            <span>{data.address}</span>
           </div>
           <span className="hotelDistance">
-            Excellent location – 120m from center
+            Excellent location – {data.distance}m from center
           </span>
           <span className="hotelPriceHighlight">
-            Book a stay over £120 at this property and get a free airport taxi
+            Book a stay over £{data.cheapestPrice} at this property and get a free airport taxi
           </span>
           <div className="hotelImages">
-            {photos.map((photo, i) => (
+            {data.photos?.map((photo: any, i: string | number | ((prevState: number) => number) | null | undefined) => (
               <div className="hotelImgWrapper" key={i}>
                 <img
                   onClick={() => handleOpen(i)}
-                  src={photo.src}
+                  src={photo}
                   alt=""
                   className="hotelImg"
                 />
@@ -116,9 +119,9 @@ const Hotel = () => {
           </div>
           <div className="hotelDetails">
             <div className="hotelDetailsTexts">
-              <h1 className="hotelTitle">Stay in the heart of London</h1>
+              <h1 className="hotelTitle">{data.title}</h1>
               <p className="hotelDesc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec justo quis velit semper consequat. In consectetur, ante a posuere ultrices, nibh nisi aliquam ligula, id ultrices erat nulla in tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin commodo est sit amet viverra lacinia. Sed tincidunt, nibh non consequat sollicitudin, purus lorem commodo orci, id sagittis tortor metus id nunc. Nullam tempus porta dolor. Sed lectus nunc, sagittis in finibus ut, rutrum id eros. Mauris semper placerat mi et viverra. Suspendisse facilisis maximus euismod. Nulla tortor orci, mattis sit amet quam non
+                {data.desc}
               </p>
             </div>
             <div className="hotelDetailsPrice">
@@ -135,7 +138,7 @@ const Hotel = () => {
         </div>
         <MailList />
         {/*<Footer /> disabled due to incomplete styling*/}
-      </div>
+      </div>)}
     </div>
   );
 };
