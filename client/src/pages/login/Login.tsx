@@ -15,24 +15,23 @@ const Login = () => {
 
   const navigate = useNavigate()
 
-  const handleChange = (e: { target: { id: any; value: any; }; }) => {
+  const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
 
-  const handleClick = async (e: { preventDefault: () => void; }) => {
+  const handleClick = async (e) => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post("https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/auth/login", credentials);
- 
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      console.log(res.data)
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       navigate("/")
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
     }
   };
 
-  
 
   return (
     <div className="login">
@@ -60,4 +59,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Login;
