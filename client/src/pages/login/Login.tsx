@@ -1,4 +1,5 @@
 // @ts-nocheck
+import axios from "axios";
 import { useContext, useState } from "react"
 import { AuthContext } from "../../context/AuthContext";
 import "./login.css"
@@ -18,8 +19,15 @@ const Login = () => {
   const handleClick = async e => {
     e.preventDefault()
     dispatch({type:"LOGIN_START"})
+    try{
+      const res = await axios.post("/auth/login", credentials)
+      dispatch({ type:"LOGIN_SUCCESS", payload: res.data })
+    }catch(err){
+      dispatch({ type:"LOGIN_FAILURE", payload:err.response.data })
+    }
   }
 
+  
   return (
     <div className="login">
       <div className="lContainer">
