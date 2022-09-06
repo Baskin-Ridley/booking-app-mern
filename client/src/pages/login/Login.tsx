@@ -8,7 +8,7 @@ const Login = () => {
     password:undefined
   })
 
-  const { loading, error, dispatch } = useContext(AuthContext);
+  const { loading, error } = useContext(AuthContext);
 
   function handleChange() {
     console.log("handlechange")
