@@ -9,10 +9,15 @@ const Login = () => {
     password:undefined
   })
 
-  const { loading, error } = useContext(AuthContext);
+  const { loading, error, dispatch } = useContext(AuthContext);
 
-  function handleChange() {
-    console.log("handlechange")
+  const handleChange = (e) => {
+    setCredentials(previous=>({...previous, [e.target.id]:e.target.value}))
+  }
+
+  const handleClick = async e => {
+    e.preventDefault()
+    dispatch({type:"LOGIN_START"})
   }
 
   return (
@@ -20,7 +25,7 @@ const Login = () => {
       <div className="lContainer">
         <input type="text" placeholder="username" id="username" onChange={handleChange} className="lInput" />
         <input type="password" placeholder="password" id="username" onChange={handleChange} className="lInput" />
-        <button className="lButton">Login</button>
+        <button onClick={handleClick} className="lButton">Login</button>
         {error && <span>{error.message}</span>}
       </div>
     </div>
