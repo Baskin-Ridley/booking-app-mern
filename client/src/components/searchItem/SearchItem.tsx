@@ -10,7 +10,7 @@ const SearchItem = ({item}: any) => {
       />
       <div className="siDesc">
         <h1 className="siTitle">{item.name}</h1>
-        <span className="siDistance">{item.distance}</span>
+        <span className="siDistance">{item.distance}m from city centre</span>
         <span className="siTaxiOp">{item.desc}</span>
         <span className="siSubtitle">
           Studio Apartment with Air conditioning
