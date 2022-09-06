@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useContext, useState } from "react"
 import { AuthContext } from "../../context/AuthContext";
 import "./login.css"
@@ -19,6 +20,8 @@ const Login = () => {
       <div className="lContainer">
         <input type="text" placeholder="username" id="username" onChange={handleChange} className="lInput" />
         <input type="password" placeholder="password" id="username" onChange={handleChange} className="lInput" />
+        <button className="lButton">Login</button>
+        {error && <span>{error.message}</span>}
       </div>
     </div>
   )
