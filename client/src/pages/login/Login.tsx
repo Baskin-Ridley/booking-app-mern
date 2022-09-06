@@ -12,11 +12,11 @@ const Login = () => {
 
   const { loading, error, dispatch } = useContext(AuthContext);
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { id: any; value: any; }; }) => {
     setCredentials(previous=>({...previous, [e.target.id]:e.target.value}))
   }
 
-  const handleClick = async e => {
+  const handleClick = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
     dispatch({type:"LOGIN_START"})
     try{
@@ -27,7 +27,7 @@ const Login = () => {
     }
   }
 
-  console.log(user)
+  console.log("user")
 
   return (
     <div className="login">
