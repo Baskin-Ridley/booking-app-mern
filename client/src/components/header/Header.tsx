@@ -9,6 +9,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns'
 import { useNavigate } from 'react-router-dom'
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from '../../context/AuthContext'
 
 const Header = ({type}) => {
 
@@ -37,6 +38,7 @@ const Header = ({type}) => {
     }
 
     const navigate = useNavigate()
+    const { user } = useContext(AuthContext);
 
     const {dispatch} = useContext(SearchContext)
 
@@ -81,7 +83,9 @@ const Header = ({type}) => {
             <p className="headerDesc">
                 This is the description give it something catchy later
             </p>
+            {!user &&
             <button className="headerBtn">Sign In / Register</button>
+            }
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <FontAwesomeIcon icon={faBed} className="headerIcon"/>
