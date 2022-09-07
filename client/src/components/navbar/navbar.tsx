@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
-const navbar = () => {
+const Navbar = () => {
+
+  const { user } = useContext(AuthContext);
+
   return (
     <div className="navbar">
         <div className="navContainer">
@@ -18,4 +23,4 @@ const navbar = () => {
   )
 }
 
-export default navbar
+export default Navbar
