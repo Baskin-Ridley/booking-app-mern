@@ -13,20 +13,24 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { SetStateAction, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+
   const location = useLocation()
-  console.log(location)
   const id = location.pathname.split("/")[2];
-  console.log(id)
   const { data, loading, error } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels/find/${id}`)
   const { date, options } = useContext(SearchContext)
-  
+  const { user } = useContext(AuthContext)
+  const navigate = useNavigate
+
+
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   function dayDifference(date1, date2) {
     const timeDiff = Math.abs(date2.getTime() - date1.getTime());
@@ -36,8 +40,14 @@ const Hotel = () => {
 
   const days = dayDifference(date[0].endDate, date[0].startDate);
 
-  console.log(days)
-  
+  const handleClick = () => {
+    if (user) {
+      setOpenModal(true)
+
+    }else{
+      navigate("/login")
+    }
+  }
 
   const handleOpen = (i: SetStateAction<number>) => {
     setSlideNumber(i);
@@ -87,7 +97,7 @@ const Hotel = () => {
           </div>
         )}
         <div className="hotelWrapper">
-          <button className="bookNow">Reserve or Book Now!</button>
+          <button onClick={handleClick} className="bookNow">Reserve or Book Now!</button>
           <h1 className="hotelTitle">{data.name}</h1>
           <div className="hotelAddress">
             <FontAwesomeIcon icon={faLocationDot} />
@@ -133,6 +143,7 @@ const Hotel = () => {
         <MailList />
         {/*<Footer /> disabled due to incomplete styling*/}
       </div>)}
+      {openModal && }
     </div>
   );
 };
