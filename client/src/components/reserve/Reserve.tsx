@@ -1,6 +1,6 @@
-import React from 'react'
-
-const Reserve = () => {
+// @ts-nocheck
+import "./reserve.css"
+const Reserve = ({ setOpen, hotelId }) => {
   return (
     <div>Reserve</div>
   )

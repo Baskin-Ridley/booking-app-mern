@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar/navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
+import Reserve from "../../components/reserve/Reserve";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -143,7 +144,7 @@ const Hotel = () => {
         <MailList />
         {/*<Footer /> disabled due to incomplete styling*/}
       </div>)}
-      {openModal && }
+      {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
     </div>
   );
 };
