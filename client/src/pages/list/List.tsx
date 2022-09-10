@@ -20,7 +20,7 @@ const List = () => {
   const [min, setMin] = useState(0)
   const [max, setMax] = useState(999)
 
-  const { data, loading, error, reFetch } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels?city=${destination}&min=${min}&max=${max}`)
+  const { data, loading, error, reFetch } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu64.gitpod.io/api/hotels?city=${destination}&min=${min}&max=${max}`)
 
   const handleClick = () =>{
     reFetch()

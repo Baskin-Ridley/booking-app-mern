@@ -3,7 +3,7 @@ import React from 'react'
 import "./featuredProperties.css"
 import useFetch from '../../hooks/useFetch'
 const FeaturedProperties = () => {
-    const { data, loading, error } = useFetch("https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels?featured=true&limit=4");
+    const { data, loading, error } = useFetch("https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu64.gitpod.io/api/hotels?featured=true&limit=4");
   
     return (
       <div className="fp">

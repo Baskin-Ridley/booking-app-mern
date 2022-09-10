@@ -26,7 +26,7 @@ const Hotel = () => {
 
   const location = useLocation()
   const id = location.pathname.split("/")[2];
-  const { data, loading, error } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu63.gitpod.io/api/hotels/find/${id}`)
+  const { data, loading, error } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu64.gitpod.io/api/hotels/find/${id}`)
   const { date, options } = useContext(SearchContext)
   const { user } = useContext(AuthContext)
   const navigate = useNavigate
