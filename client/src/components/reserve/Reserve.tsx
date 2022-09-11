@@ -1,6 +1,8 @@
 // @ts-nocheck
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import useFetch from "../../hooks/useFetch"
+
 import "./reserve.css"
 const Reserve = ({ setOpen, hotelId }) => {
 
