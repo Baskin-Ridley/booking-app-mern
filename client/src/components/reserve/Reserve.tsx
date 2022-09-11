@@ -22,14 +22,19 @@ const Reserve = ({ setOpen, hotelId }) => {
     let list = []
 
     while (date <= end){
-      list.push(new Date(date))
+      list.push(new Date(date).getTime())
       date.setDate(date.getDate()+1)
     }
     return list
   }
-  console.log(getDatesInRange(date[0].startDate, date[0].endDate))
+  const allDates = getDatesInRange(date[0].startDate, date[0].endDate)
 
 
+  const isAvailable = (roomNumber) => {
+    const isFound = roomNumber.unavailableDates.some((date) =>
+      allDates.includes(new Date(date).getTime())
+    );
+  }
   const handleSelect = (e) => {
     const checked = e.target.checked
     const value = e.target.value
