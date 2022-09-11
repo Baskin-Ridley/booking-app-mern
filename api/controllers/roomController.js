@@ -36,6 +36,7 @@ export const createRoom = async (req, res, next) => {
       next(err);
     }
   };
+
   export const updateRoomAvailability = async (req, res, next) => {
     try {
       await Room.updateOne(
@@ -51,6 +52,8 @@ export const createRoom = async (req, res, next) => {
       next(err);
     }
   };
+
+
   export const deleteRoom = async (req, res, next) => {
     const hotelId = req.params.hotelId;
     try {

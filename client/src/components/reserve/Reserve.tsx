@@ -43,9 +43,19 @@ const Reserve = ({ setOpen, hotelId }) => {
     setSelectedRooms(checked ? [...selectedRooms, value] : selectedRooms.filter(item=>item !==value))
   }
 
-  const handleClick = () => {
+  const handleClick = async () => {
+    try {
+      await Promise.all(
+        selectedRooms.map((roomId) => {
+          const res = axios.put(`/rooms/availability/${roomId}`, {
+            dates: alldates,
+          });
+          return res.data;
+        })
+      );
 
-  }
+    } catch (err) {}
+  };
 
   return (
     <div className="reserve">
@@ -62,7 +72,7 @@ const Reserve = ({ setOpen, hotelId }) => {
               <div className="rTitle">{item.title}</div>
               <div className="rDesc">{item.desc}</div>
               <div className="rMax">
-                Max people: <b>{item.maxPeople}</b>
+                Maximum Guests: <b>{item.maxPeople}</b>
               </div>
               <div className="rPrice">£{item.price}</div>
             </div>
