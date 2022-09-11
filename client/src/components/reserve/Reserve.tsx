@@ -4,11 +4,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import useFetch from "../../hooks/useFetch"
 import { useState } from "react"
 import "./reserve.css"
+import { useContext } from "react"
+import { SearchContext } from "../../context/SearchContext"
 const Reserve = ({ setOpen, hotelId }) => {
 
   const [selectedRooms, setSelectedRooms ] = useState([])
-
   const { data, loading, error } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu64.gitpod.io/api/hotels/room/${hotelId}`)
+  const { date } = useContext(SearchContext)
+
+  const getDatesInRange = (startDate, endDate)=>{
+
+    const start = new Date(startDate)
+    const end = new Date(endDate)
+
+    const date = new Date (start.getTime());
+    
+    let list = []
+
+    while (date <= end){
+      list.push(new Date(date))
+      date.setDate(date.getDate()+1)
+    }
+    return list
+  }
+  console.log(getDatesInRange(date[0].startDate, date[0].endDate))
+
 
   const handleSelect = (e) => {
     const checked = e.target.checked
@@ -16,7 +36,9 @@ const Reserve = ({ setOpen, hotelId }) => {
     setSelectedRooms(checked ? [...selectedRooms, value] : selectedRooms.filter(item=>item !==value))
   }
 
+  const handleClick = () => {
 
+  }
 
   return (
     <div className="reserve">
@@ -38,7 +60,9 @@ const Reserve = ({ setOpen, hotelId }) => {
                   <input type="checkbox" value={roomNumber._id} onChange={handleSelect}/>
                 </div>  
               ))}
+              <button onClick={handleClick} className="rButton">
 
+              </button>
 
 
 
