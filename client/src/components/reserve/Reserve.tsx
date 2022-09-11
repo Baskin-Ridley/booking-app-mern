@@ -11,8 +11,12 @@ const Reserve = ({ setOpen, hotelId }) => {
   const { data, loading, error } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu64.gitpod.io/api/hotels/room/${hotelId}`)
 
   const handleSelect = (e) => {
-    const selected = e.target.checked
+    const checked = e.target.checked
+    const value = e.target.value
+    setSelectedRooms(checked ? [...selectedRooms, value] : selectedRooms.filter(item=>item !==value))
   }
+
+
 
   return (
     <div className="reserve">
