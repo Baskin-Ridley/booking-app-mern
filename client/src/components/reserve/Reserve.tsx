@@ -2,7 +2,7 @@
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import useFetch from "../../hooks/useFetch"
-
+import { useState } from "react"
 import "./reserve.css"
 const Reserve = ({ setOpen, hotelId }) => {
 
