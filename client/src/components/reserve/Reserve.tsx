@@ -6,7 +6,14 @@ import useFetch from "../../hooks/useFetch"
 import "./reserve.css"
 const Reserve = ({ setOpen, hotelId }) => {
 
+  const [selectedRooms, setSelectedRooms ] = useState([])
+
   const { data, loading, error } = useFetch(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu64.gitpod.io/api/hotels/room/${hotelId}`)
+
+  const handleSelect = (e) => {
+    const selected = e.target.checked
+  }
+
   return (
     <div className="reserve">
       <div className="rContainer">
@@ -20,10 +27,17 @@ const Reserve = ({ setOpen, hotelId }) => {
               <div className="rMax">Max People: <b>{item.maxPeople}</b></div>
               <div className="rPrice">£{item.price}</div>
             </div>
-            <div className="room">
+            <div className="rSelectRooms">
               {item.roomNumbers.map(roomNumber=>(
-                <label>{roomNumber.number}</label>
+                <div className="room">
+                  <label>{roomNumber.number}</label>
+                  <input type="checkbox" value={roomNumber._id} onChange={handleSelect}/>
+                </div>  
               ))}
+
+
+
+
             </div>
           </div>
         ))}
