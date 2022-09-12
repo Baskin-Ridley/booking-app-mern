@@ -3,9 +3,9 @@ import "./featured.css"
 import useFetch from '../../hooks/useFetch'
 const Featured = () => {
 
-    const { data, loading, error } = useFetch("https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu64.gitpod.io/api/hotels/countByCity?cities=paris,london,dubai")
+    const { data, loading, error } = useFetch("/hotels/countByCity?cities=paris,london,dubai")
 
-    console.log(data)
+
 
     return (
         <div className="featured">
