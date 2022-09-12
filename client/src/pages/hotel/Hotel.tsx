@@ -116,7 +116,8 @@ const Hotel = () => {
               <div className="hotelImgWrapper" key={i}>
                 <img
                   onClick={() => handleOpen(i)}
-                  src={photo}
+                  // eslint-disable-next-line no-sequences
+                  src={`../${photo}`}
                   alt=""
                   className="hotelImg"
                 />
