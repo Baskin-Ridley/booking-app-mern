@@ -4,7 +4,7 @@ const SearchItem = ({item}: any) => {
   return (
     <div className="searchItem">
       <img
-        src={item.photos}
+        src={item.photos[0]}
         alt=""
         className="siImg"
       />
