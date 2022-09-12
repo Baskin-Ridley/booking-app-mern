@@ -49,7 +49,7 @@ const Reserve = ({ setOpen, hotelId }) => {
     try {
       await Promise.all(
         selectedRooms.map((roomId) => {
-          const res = axios.put(`https://8800-baskinridle-bookingappm-f2ixwev9f56.ws-eu64.gitpod.io/api/auth/rooms/availability/${roomId}`, {
+          const res = axios.put(`/rooms/availability/${roomId}`, {
             dates: alldates,
           });
           return res.data;
