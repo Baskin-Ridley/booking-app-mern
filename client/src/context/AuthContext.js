@@ -17,16 +17,13 @@ const AuthReducer = (state, action) => {
         error: null,
       };
     case "LOGIN_SUCCESS":
-      console.log("success")
 
-      console.log("hello", action.payload)
       return {
         user: action.payload,
         loading: false,
         error: null,
       };
     case "LOGIN_FAILURE":
-      console.log("failure")
       return {
         user: null,
         loading: false,
