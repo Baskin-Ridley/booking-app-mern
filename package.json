@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "start": "react-scripts start",
+        "dev": "concurrently  \"cd api && npm run start\" \"cd api && npm run build\""
+    },
+    "dependencies": {
+        "concurrently": "^7.4.0"
+    }
+}
