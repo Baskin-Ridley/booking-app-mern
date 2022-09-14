@@ -12,7 +12,7 @@ const Featured = () => {
             {loading ? ("Loading") : (
             <>
             <div className="featuredItem">
-                <img src="images/cities/christoph-schulz-7tb-b37yHx4-unsplash.jpg" 
+                <img src="images/cities/joseph-barrientos-jdswuUaDeKM-unsplash.avif" 
                 alt="Cancun from above next to the sea"
                 className="featuredImg"/>
                 <div className="featuredTitles">
@@ -30,7 +30,7 @@ const Featured = () => {
                 </div>
             </div>
             <div className="featuredItem">
-                <img src="images/cities/joseph-barrientos-jdswuUaDeKM-unsplash.jpg" 
+                <img src="images/cities/christoph-schulz-7tb-b37yHx4-unsplash.avif" 
                 alt="Dubai from above next to the sea"
                 className="featuredImg"/>
                 <div className="featuredTitles">
