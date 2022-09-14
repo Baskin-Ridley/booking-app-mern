@@ -13,9 +13,9 @@
   flex-direction: column;
 }
 
-.fpListImg {
+.fpImg {
   width: 100%;
-  height: 250px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
