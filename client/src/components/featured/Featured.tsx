@@ -12,8 +12,8 @@ const Featured = () => {
             {loading ? ("Loading") : (
             <>
             <div className="featuredItem">
-                <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" 
-                alt="placeholder"
+                <img src="images/cities/christoph-schulz-7tb-b37yHx4-unsplash.jpg" 
+                alt="Cancun from above next to the sea"
                 className="featuredImg"/>
                 <div className="featuredTitles">
                     <h1>Cancun</h1>
@@ -21,7 +21,7 @@ const Featured = () => {
                 </div>
             </div>
             <div className="featuredItem">
-                <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" 
+                <img src="images/cities/photo-1526129318478-62ed807ebdf9.avif" 
                 alt="placeholder"
                 className="featuredImg"/>
                 <div className="featuredTitles">
@@ -30,8 +30,8 @@ const Featured = () => {
                 </div>
             </div>
             <div className="featuredItem">
-                <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" 
-                alt="placeholder"
+                <img src="images/cities/joseph-barrientos-jdswuUaDeKM-unsplash.jpg" 
+                alt="Dubai from above next to the sea"
                 className="featuredImg"/>
                 <div className="featuredTitles">
                     <h1>Dubai</h1>
