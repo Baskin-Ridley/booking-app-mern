@@ -4,8 +4,7 @@
     "start": "npm start --prefix server",
     "install-client": "cd client && npm install && npm run build && cd ..",
     "install-server": "cd api && npm install && cd .. ",
-
-    "dev": "npm run install-client && npm run install-server"
+    "heroku-postbuild": "npm run install-client && npm run install-server"
   },
     "dependencies": {
         "concurrently": "^7.4.0"
