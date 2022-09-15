@@ -1,8 +1,8 @@
 {
     "scripts": {
         "start": "react-scripts start",
-        "installApp": "concurrently  \"cd api && npm run install\" \"cd client && npm run build\"",
-        "dev": "concurrently  \"cd api && npm run start\" \"cd client && npm run build\""
+        "installApp": "concurrently \"cd client && npm run build\" \"cd api && npm run start\"",
+        "dev": "concurrently  \"cd api && npm run start\" "
     },
     "dependencies": {
         "concurrently": "^7.4.0"
