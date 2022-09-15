@@ -1,9 +1,9 @@
 {
-    "scripts": {
-        "start": "react-scripts start",
-        "installApp": "concurrently \"cd client && npm run build\" \"cd api && npm run start\"",
-        "dev": "concurrently  \"cd api && npm run start\" "
-    },
+  "scripts": {
+    "server": "npm start --prefix api",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
     "dependencies": {
         "concurrently": "^7.4.0"
     }
