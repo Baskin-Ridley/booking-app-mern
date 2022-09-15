@@ -10,10 +10,11 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
-.env
-*.env
-api/*/.env
-api/*/*.env
+
+#.env
+#*.env
+#api/*/.env
+#api/*/*.env
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
