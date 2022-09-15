@@ -53,5 +53,5 @@
   "devDependencies": {
     "@types/react-date-range": "^1.4.4",
     "gh-pages": "^4.0.0"
-  },"proxy":"http://localhost:process.env.PORT/api"
+  },"proxy":"http://localhost:8800/api"
 }
