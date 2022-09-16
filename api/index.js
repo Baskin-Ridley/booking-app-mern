@@ -7,6 +7,8 @@ import hotelsRoute from "./routes/hotels.js"
 import roomsRoute from "./routes/rooms.js"
 import cookieParser from "cookie-parser"
 import cors from "cors";
+import path from 'path';
+
 const app = express()
 dotenv.config()
 
@@ -26,6 +28,7 @@ mongoose.connection.on("disconnected", ()=>{
 mongoose.connection.on("connected", ()=>{
     console.log("mongoDB connected")
 })
+
 
 //middleware
 
@@ -58,3 +61,9 @@ app.listen(process.env.PORT || 8800, () => {
     console.log("connected")
 })
 
+// launch app
+
+
+
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve('../client/build')));
