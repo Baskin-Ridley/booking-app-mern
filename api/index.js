@@ -78,3 +78,5 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 }); 
+
+//success! after 3 days connected the frontend to the backend on a production server
