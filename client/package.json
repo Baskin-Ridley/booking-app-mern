@@ -53,5 +53,5 @@
   "devDependencies": {
     "@types/react-date-range": "^1.4.4",
     "gh-pages": "^4.0.0"
-  },"proxy":"booking-app-mern:8800/api"
+  },"proxy":"http://localhost:8800/api"
 }
