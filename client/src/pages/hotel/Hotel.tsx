@@ -26,6 +26,7 @@ const Hotel = () => {
 
   const location = useLocation()
   const id = location.pathname.split("/")[2];
+  console.log({id})
   const { data, loading, error } = useFetch(`/hotels/find/${id}`)
   const { date, options } = useContext(SearchContext)
   const { user } = useContext(AuthContext)
