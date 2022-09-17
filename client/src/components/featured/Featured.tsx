@@ -12,12 +12,12 @@ const Featured = () => {
             {loading ? ("Loading") : (
             <>
             <div className="featuredItem">
-                <img src="images/cities/joseph-barrientos-jdswuUaDeKM-unsplash.avif" 
+                <img src="images/cities/pexels-fernando-garcia-9424954.webp" 
                 alt="Cancun from above next to the sea"
                 className="featuredImg"/>
                 <div className="featuredTitles">
                     <h1>Cancun</h1>
-                    <h1>{data[0]} properties</h1>
+                    <h1>{data[0]}7 properties</h1>
                 </div>
             </div>
             <div className="featuredItem">
@@ -26,7 +26,7 @@ const Featured = () => {
                 className="featuredImg"/>
                 <div className="featuredTitles">
                     <h1>London</h1>
-                    <h1>{data[1]} properties</h1>
+                    <h1>{data[1]}3 properties</h1>
                 </div>
             </div>
             <div className="featuredItem">
@@ -35,7 +35,7 @@ const Featured = () => {
                 className="featuredImg"/>
                 <div className="featuredTitles">
                     <h1>Dubai</h1>
-                    <h1>{data[2]} properties</h1>
+                    <h1>{data[2]}4 properties</h1>
                 </div>
             </div></>)}
 
