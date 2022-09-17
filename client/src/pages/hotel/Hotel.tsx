@@ -139,7 +139,7 @@ const Hotel = () => {
                 Located in the heart of London!
               </span>
               <h2>
-                <b>£{days * data.cheapestPrice * options.room}</b> ({days} nights)
+                <b>£{days * data.cheapestPrice * options.room}</b> ({days} {days === 1 ? "night" : "nights"})
               </h2>
               <button onClick={handleClick}>Reserve or Book Now!</button>
             </div>
