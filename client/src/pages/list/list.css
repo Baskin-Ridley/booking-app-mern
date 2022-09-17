@@ -37,6 +37,18 @@
   margin-bottom: 10px;
 }
 
+.lsItem > ::-moz-placeholder {
+  text-transform: capitalize;
+}
+
+.lsItem > :-ms-input-placeholder {
+  text-transform: capitalize;
+}
+
+.lsItem > ::placeholder {
+  text-transform: capitalize;
+}
+
 .lsItem > label {
   font-size: 12px;
 }

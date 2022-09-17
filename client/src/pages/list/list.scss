@@ -27,11 +27,16 @@
     margin-bottom: 10px;
 }
 
+
 .lsItem {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-bottom: 10px;
+}
+
+.lsItem > ::placeholder {
+    text-transform: capitalize;
 }
 
 .lsItem>label{
