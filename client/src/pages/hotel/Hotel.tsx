@@ -43,12 +43,13 @@ const Hotel = () => {
   const days = dayDifference(date[0].endDate, date[0].startDate);
 
   const handleClick = () => {
-    if (user) {
+    /*if (user) {
       setOpenModal(true)
 
     }else{
       navigate("/login")
-    }
+    } */
+    setOpenModal(true)
   }
 
   const handleOpen = (i: SetStateAction<number>) => {
@@ -140,7 +141,7 @@ const Hotel = () => {
               <h2>
                 <b>£{days * data.cheapestPrice * options.room}</b> ({days} nights)
               </h2>
-              <button>Reserve or Book Now!</button>
+              <button onClick={handleClick}>Reserve or Book Now!</button>
             </div>
           </div>
         </div>
