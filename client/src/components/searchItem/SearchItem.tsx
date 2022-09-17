@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 const SearchItem = ({item}: any) => {
   return (
     <div className="searchItem">
-      <img
-        src={item.photos[0]}
-        alt=""
-        className="siImg"
-      />
+      <Link to={`${item._id}`}>
+        <img
+          src={item.photos[0]}
+          alt=""
+          className="siImg"
+        />
+        </Link>
       <div className="siDesc">
+      <Link to={`${item._id}`} style={{ textDecoration: 'none' }}>
         <h1 className="siTitle">{item.name}</h1>
+      </Link>
         <span className="siDistance">{item.distance}m from city centre</span>
         <span className="siTaxiOp">{item.title}</span>
         <span className="siSubtitle">
