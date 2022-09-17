@@ -10,9 +10,6 @@ const Navbar = () => {
 
   const navigate = useNavigate()
 
-  const handleLoginClick = () => {
-    navigate("/login");
-  };
 
   return (
     <div className="navbar">
@@ -20,11 +17,6 @@ const Navbar = () => {
             <Link to = "/" style={{color:"inherit", textDecoration:"none"}}>
               <span className="logo">Hestia Bookings</span>
             </Link>
-              {user ? user.username : (
-               <div className="navItems">
-                  <button className="navButton" onClick={handleLoginClick}>Register</button>
-                  <button className="navButton" onClick={handleLoginClick}>Login</button>
-              </div>)}
         </div>
     </div>
   )

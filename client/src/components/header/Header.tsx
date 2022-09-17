@@ -84,9 +84,7 @@ const Header = ({type}) => {
             <p className="headerDesc">
                 Search low prices on hotels, homes and much more...
             </p>
-            {!user &&
-            <button onClick={handleLoginClick} className="headerBtn">Sign In / Register</button>
-            }
+
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <FontAwesomeIcon icon={faBed} className="headerIcon"/>
