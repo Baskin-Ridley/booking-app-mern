@@ -26,12 +26,12 @@ const Hotel = () => {
 
   const location = useLocation()
   const id = location.pathname.split("/")[2];
-  console.log({id})
+
   const { data, loading, error } = useFetch(`/hotels/find/${id}`)
   const { date, options } = useContext(SearchContext)
   const { user } = useContext(AuthContext)
   const navigate = useNavigate
-
+  console.log({data})
 
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   function dayDifference(date1, date2) {
@@ -90,7 +90,7 @@ const Hotel = () => {
               onClick={() => handleMove("l")}
             />
             <div className="sliderWrapper">
-              <img src={photos[slideNumber].src} alt="" className="sliderImg" />
+              <img src={`../${data.photos[slideNumber]}`} alt="" className="sliderImg" />
             </div>
             <FontAwesomeIcon
               icon={faCircleArrowRight}
