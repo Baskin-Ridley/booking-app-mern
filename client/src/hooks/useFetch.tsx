@@ -11,6 +11,11 @@ const useFetch = (urlEntry: any) => {
     let url = "";
   
 
+
+
+    //url = "api" + urlEntry; typically works but not on hotels page
+
+
     if (process.env.NODE_ENV === "production") {
       url = "api/" + urlEntry;
       console.log({url})
