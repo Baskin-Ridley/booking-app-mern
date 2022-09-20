@@ -24,3 +24,10 @@ The main goal of this project was to learn many new systems which is why I used 
 
 ## Screenshots
 
+![animation](https://raw.githubusercontent.com/Baskin-Ridley/booking-app-mern/main/readme-assets/hestia%20booking.webp)
+
+![main page](https://raw.githubusercontent.com/Baskin-Ridley/booking-app-mern/main/readme-assets/home.webp)
+
+![search page](https://raw.githubusercontent.com/Baskin-Ridley/booking-app-mern/main/readme-assets/search.webp)
+
+![hotel page](https://raw.githubusercontent.com/Baskin-Ridley/booking-app-mern/main/readme-assets/hotel.webp)
