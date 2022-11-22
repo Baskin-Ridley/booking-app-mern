@@ -8,8 +8,6 @@ The intent of this app was for me to learn and implement how to connect a fronte
 
 Find and book rooms at 3 major destinations (London, Cancun, and Dubai).
 
-![video](https://github.com/Baskin-Ridley/booking-app-mern/blob/main/readme-assets/website-demo.webm)
-
 ## Built With
 The main goal of this project was to learn many new systems which is why I used a wide variety of frameworks and other resources including:
 
