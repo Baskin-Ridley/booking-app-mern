@@ -1,6 +1,7 @@
 # Hestia Booking - A fully featured MERN APP
 
-https://hestia-booking.herokuapp.com/
+Currently offline due to Heroku no longer offering free-tier.
+Please see screenshots and video below.
 
 This is a clone of booking.com built using the MERN stack. Using ReactJS in the frontend, with ExpressJS for handling API requests, it runs on NodeJS, and use MongoDB as the database.
 
