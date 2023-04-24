@@ -1,5 +1,7 @@
 # Hestia Booking - A fully featured MERN APP
 
+![animation](https://raw.githubusercontent.com/Baskin-Ridley/booking-app-mern/main/readme-assets/hestia%20booking.webp)
+
 Currently offline due to Heroku no longer offering free-tier.
 Please see screenshots and video below.
 
@@ -24,8 +26,6 @@ The main goal of this project was to learn many new systems which is why I used 
 - ExpressJS
 
 ## Screenshots
-
-![animation](https://raw.githubusercontent.com/Baskin-Ridley/booking-app-mern/main/readme-assets/hestia%20booking.webp)
 
 ![main page](https://raw.githubusercontent.com/Baskin-Ridley/booking-app-mern/main/readme-assets/home.webp)
 
